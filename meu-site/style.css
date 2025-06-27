@@ -1,0 +1,58 @@
+/* Importando a fonte */
+@font-face {
+  font-family: 'Minecraft';
+  src: url('meu-site/fonts/Minecraft.ttf') format('truetype');
+}
+
+/* Estilo geral */
+body {
+  font-family: 'Minecraft', sans-serif;
+  font-size: 16px;
+  color: white; /* cor da letra */
+  text-shadow: -1px -1px 0 black,
+                1px -1px 0 black,
+                -1px 1px 0 black,
+                1px 1px 0 black;
+  background-image: url('imagens/frutiger-aero.gif');
+  background-size: cover;
+  background-position: center;
+}
+
+  /* Cabeçalho */
+  header {
+    text-align: center;
+    padding: 40px 0;
+    background: linear-gradient(45deg, #ffffff5a, #000);
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 4px rgb(122, 0, 0);
+  }
+  
+  /* Contorno */
+  h1 {
+    color: white; /* cor da letra */
+    text-shadow: -1px -1px 0 black,
+                  1px -1px 0 black,
+                 -1px 1px 0 black,
+                  1px 1px 0 black;
+  }
+
+  /* Conteúdo principal */
+  main {
+    padding: 20px;
+    color: rgb(255, 0, 0);
+  }
+  
+  /* Seções */
+  section {
+    margin-bottom: 30px;
+  }
+  
+  /* Rodapé */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ff000088;
+    font-size: 0.8em;
+    border-top: 1px solid #ffffff;
+  }
+  
