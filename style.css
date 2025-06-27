@@ -24,7 +24,7 @@ body {
     padding: 40px 0;
     background: linear-gradient(45deg, #ffffff5a, #000);
     color: rgb(255, 255, 255);
-    text-shadow: 1px 1px 4px rgb(122, 0, 0);
+    text-shadow: 1px 1px 4px rgb(0, 0, 0);
   }
   
   /* Contorno */
@@ -38,8 +38,14 @@ body {
 
   /* Conteúdo principal */
   main {
+    font-family: 'Minecraft', sans-serif;
+    font-size: 16px;
+    color: white; /* cor da letra */
+    text-shadow: -1px -1px 0 black,
+                1px -1px 0 black,
+                -1px 1px 0 black,
+                1px 1px 0 black;
     padding: 20px;
-    color: rgb(255, 0, 0);
   }
   
   /* Seções */
@@ -51,7 +57,7 @@ body {
   footer {
     text-align: center;
     padding: 20px;
-    background-color: #ff000088;
+    background-color: #00ff9d78;
     font-size: 0.8em;
     border-top: 1px solid #ffffff;
   }
