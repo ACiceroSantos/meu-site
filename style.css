@@ -1,0 +1,36 @@
+/* Estilo geral */
+body {
+  background-image: url('imagens/centopeia.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+  /* Cabeçalho */
+  header {
+    text-align: center;
+    padding: 40px 0;
+    background: linear-gradient(45deg, #ffffff5a, #000);
+    color: rgb(255, 0, 0);
+    text-shadow: 1px 1px 4px rgb(122, 0, 0);
+  }
+  
+  /* Conteúdo principal */
+  main {
+    padding: 20px;
+    color: rgb(255, 0, 0);
+  }
+  
+  /* Seções */
+  section {
+    margin-bottom: 30px;
+  }
+  
+  /* Rodapé */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ff000088;
+    font-size: 0.8em;
+    border-top: 1px solid #ffffff;
+  }
+  
