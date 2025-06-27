@@ -1,6 +1,19 @@
+/* Importando a fonte */
+@font-face {
+  font-family: 'Minecraft';
+  src: url('meu-site/fonts/Minecraft.ttf') format('truetype');
+}
+
 /* Estilo geral */
 body {
-  background-image: url('imagens/centopeia.jpg');
+  font-family: 'Minecraft', sans-serif;
+  font-size: 16px;
+  color: white; /* cor da letra */
+  text-shadow: -1px -1px 0 black,
+                1px -1px 0 black,
+                -1px 1px 0 black,
+                1px 1px 0 black;
+  background-image: url('imagens/frutiger-aero.gif');
   background-size: cover;
   background-position: center;
 }
@@ -10,10 +23,19 @@ body {
     text-align: center;
     padding: 40px 0;
     background: linear-gradient(45deg, #ffffff5a, #000);
-    color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
     text-shadow: 1px 1px 4px rgb(122, 0, 0);
   }
   
+  /* Contorno */
+  h1 {
+    color: white; /* cor da letra */
+    text-shadow: -1px -1px 0 black,
+                  1px -1px 0 black,
+                 -1px 1px 0 black,
+                  1px 1px 0 black;
+  }
+
   /* Conteúdo principal */
   main {
     padding: 20px;
