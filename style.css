@@ -70,7 +70,9 @@ body {
   /* Rodapé */
   footer {
     text-align: center;
-    background-color: #888888;
+    padding: 40px;
+    background: linear-gradient(90deg, #ffffff5a, #000);
+    background-color: #a7a7a77a;
     font-size: 0.8em;
     border-top: 1px solid #000000;
   }
