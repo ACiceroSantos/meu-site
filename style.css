@@ -15,7 +15,7 @@ body {
                 1px -1px 0 black,
                 -1px 1px 0 black,
                 1px 1px 0 black; */
-  background: linear-gradient(to bottom, #dfe9f3, #ffffff);
+  /* background: linear-gradient(to bottom, #dfe9f3, #ffffff); */
   background-image: url('imagens/wall.jpg');
   background-size: cover;
   background-position: center;
@@ -24,6 +24,7 @@ body {
 header{
   font-family: 'CoralPixels';
   margin: 0;
+  padding: 40px 0;
   font-size: 32px;
   text-align: center;
   background-image: url('imagens/metal-sign.jpg');
@@ -36,7 +37,7 @@ header{
   margin: 50px auto;
   border: none;
   outline: none;
-  /* color: #000; */
+  color: #000;
   background-color: linear-gradient(
     45deg,
     #999 5%,
@@ -52,15 +53,6 @@ header{
   padding: 30px;
   backdrop-filter: blur(10px);
 }
-
-  /* Cabeçalho */
-  header {
-    text-align: center;
-    padding: 40px 0;
-    background: linear-gradient(45deg, #ffffff5a, #000);
-    color: rgb(255, 255, 255);
-    text-shadow: 1px 1px 4px rgb(0, 0, 0);
-  }
   
   /* Contorno */
   h1 {
@@ -73,7 +65,7 @@ header{
 
   /* Conteúdo principal */
   main {
-    font-family: 'Minecraft', sans-serif;
+    font-family: 'CoralPixels';
     font-size: 16px;
     color: white; /* cor da letra */
     text-shadow: -1px -1px 0 black,
