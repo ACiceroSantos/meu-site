@@ -5,6 +5,14 @@
 }
 
 /* Estilo geral */
+head{
+  font-family: 'CoralPixels';
+  font-size: 32px;
+  background-image: url('imagens/metal-sign.jpg');
+  background-size: contain;
+  background-position: top;
+}
+
 body {
   font-family: 'CoralPixels', sans-serif;
   margin: 0;
@@ -15,10 +23,10 @@ body {
                 1px -1px 0 black,
                 -1px 1px 0 black,
                 1px 1px 0 black; */
-  background: linear-gradient(to bottom, #dfe9f3, #ffffff)
-  /* background-image: url('imagens/frutiger-aero.gif'); */
-  /* background-size: cover; */
-  /* background-position: center; */
+  background: linear-gradient(to bottom, #dfe9f3, #ffffff);
+  background-image: url('imagens/wall.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .container{
@@ -26,7 +34,7 @@ body {
   margin: 50px auto;
   border: none;
   outline: none;
-  color: #000;
+  /* color: #000; */
   background-color: linear-gradient(
     45deg,
     #999 5%,
