@@ -1,71 +1,41 @@
 /* Importando a fonte */
 @font-face {
-  font-family: 'WhoaSauce';
-  src: url('meu-site/fonts/WhoaSauce.ttf') format('truetype');
+  font-family: 'Chicago';
+  src: url('fonts/chicagoflf.ttf') format('truetype');
 }
 
 /* Estilo geral */
 body {
-  font-family: 'WhoaSauce';
+  background-color: #c3d6f0; /* azul clarinho típico do Mac OS */
+  font-family: 'Chicago', sans-serif; /* fonte clássica do Mac */
+  color: #000;
   margin: 0;
-  padding: 0;
-  font-size: 16px;
-  /*color: white; /* cor da letra */
-  /*text-shadow: -1px -1px 0 black,
-                1px -1px 0 black,
-                -1px 1px 0 black,
-                1px 1px 0 black; */
-  /* background: linear-gradient(to bottom, #dfe9f3, #ffffff); */
+  padding: 20px;
+}
+
+/* Janela central estilo Mac */
+.window {
+  background-color: #ececec;
+  border: 2px solid #a0a0a0;
+  width: 600px;
+  margin: auto;
+  padding: 10px;
+  box-shadow: 2px 2px 0 #666;
+  border-radius: 6px;
+  font-size: 14px;
 }
 
 header{
-  font-family: 'WhoaSauce';
+  font-family: 'Chicago', sans-serif;
   margin: 0;
   padding: 40px 0;
   font-size: 32px;
   text-align: center;
-  background-image: url('imagens/metal-sign.jpg');
-  background-size: contain;
-  background-position: top;
-}
-
-.container{
-  background-image: url('imagens/wall.jpg');
-  background-size: contain;
-  background-position: center;
-  max-width: 900px;
-  margin: 50px auto;
-  border: none;
-  outline: none;
-  color: #000;
-  background-color: linear-gradient(
-    45deg,
-    #999 5%,
-    #fff 10%,
-    #ccc 30%,
-    #ddd 50%,
-    #ccc 70%,
-    #fff 80%,
-    #999 95%
-  );
-  border-radius: 25px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-  padding: 30px;
-  backdrop-filter: blur(10px);
 }
   
-  /* Contorno */
-  h1 {
-    color: white; /* cor da letra */
-    text-shadow: -1px -1px 0 black,
-                  1px -1px 0 black,
-                 -1px 1px 0 black,
-                  1px 1px 0 black;
-  }
-
   /* Conteúdo principal */
   main {
-    font-family: 'WhoaSauce';
+    font-family: 'Chicago', sans-serif;
     font-size: 16px;
     color: white; /* cor da letra */
     text-shadow: -1px -1px 0 black,
@@ -85,8 +55,5 @@ header{
     text-align: center;
     padding: 30px;
     font-size: 0.8em;
-    background-image: url('imagens/metal-sign.jpg');
-    background-size: contain;
-    background-position: bottom;
   }
   
