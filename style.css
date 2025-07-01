@@ -1,12 +1,12 @@
 /* Importando a fonte */
 @font-face {
-  font-family: 'CoralPixels';
-  src: url('meu-site/fonts/CoralPixels.ttf') format('truetype');
+  font-family: 'WhoaSauce';
+  src: url('meu-site/fonts/WhoaSauce.ttf') format('truetype');
 }
 
 /* Estilo geral */
 body {
-  font-family: 'CoralPixels';
+  font-family: 'WhoaSauce';
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -16,13 +16,10 @@ body {
                 -1px 1px 0 black,
                 1px 1px 0 black; */
   /* background: linear-gradient(to bottom, #dfe9f3, #ffffff); */
-  background-image: url('imagens/wall.jpg');
-  background-size: cover;
-  background-position: center;
 }
 
 header{
-  font-family: 'CoralPixels';
+  font-family: 'WhoaSauce';
   margin: 0;
   padding: 40px 0;
   font-size: 32px;
@@ -33,6 +30,9 @@ header{
 }
 
 .container{
+  background-image: url('imagens/wall.jpg');
+  background-size: contain;
+  background-position: center;
   max-width: 900px;
   margin: 50px auto;
   border: none;
@@ -65,7 +65,7 @@ header{
 
   /* Conteúdo principal */
   main {
-    font-family: 'CoralPixels';
+    font-family: 'WhoaSauce';
     font-size: 16px;
     color: white; /* cor da letra */
     text-shadow: -1px -1px 0 black,
@@ -83,10 +83,10 @@ header{
   /* Rodapé */
   footer {
     text-align: center;
-    padding: 40px;
-    background: linear-gradient(90deg, #ffffff5a, #000);
-    background-color: #a7a7a77a;
+    padding: 30px;
     font-size: 0.8em;
-    border-top: 1px solid #000000;
+    background-image: url('imagens/metal-sign.jpg');
+    background-size: contain;
+    background-position: bottom;
   }
   
