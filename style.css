@@ -32,6 +32,34 @@ header{
   font-size: 32px;
   text-align: center;
 }
+
+h1{
+  font-size: 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: linear-gradient(
+    to right,
+   hsl(147, 25%, 27%) 0,
+   hsl(147, 25%, 61%) 7%, 
+   hsl(147, 25%, 100%) 14%, 
+   hsl(194, 25%, 66%) 21%, 
+   hsl(194, 25%, 33%) 28% );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s infinite linear;
+}
+
+@keyframes shine {
+  0%{
+    background-position: 0;
+  }
+  60%{
+    background-position: 60%;
+  }
+  100%{
+    background-position: 100%;
+  }
+}
   
   /* Conteúdo principal */
   main {
