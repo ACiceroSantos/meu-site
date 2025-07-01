@@ -37,18 +37,18 @@ h1{
   color: #000;
   font-size: 50px;
   cursor: pointer;
-  text-transform: uppercase;
+  text-transform: none;
   background: linear-gradient(
     to right,
    hsl(0, 0%, 20%) 0,
-   hsl(147, 25%, 60%) 7%, 
-   hsl(147, 25%, 100%) 14%, 
-   hsl(194, 25%, 60%) 21%, 
-   hsl(194, 25%, 20%) 28% );
+   hsl(0, 0%, 60%) 7%, 
+   hsl(0, 0%, 100%) 14%, 
+   hsl(0, 0%, 60%) 21%, 
+   hsl(0, 0%, 20%) 28% );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 5s infinite linear;
-  padding: 100px;
+  animation: shine 4s infinite linear;
+  padding: 60px;
 }
 
 @keyframes shine {
@@ -56,10 +56,10 @@ h1{
     background-position: 0;
   }
   60%{
-    background-position: 1420px;
+    background-position: 1300px;
   }
   100%{
-    background-position: 1420px;
+    background-position: 1300px;
   }
 }
   
