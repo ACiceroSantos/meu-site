@@ -13,26 +13,82 @@
 
     <main>
       <div class="window">
-        <section>
-          <h2>Sobre mim</h2>
-          <p>Faço ciência da computação na ufmg</p>
-          <p>oi</p>
-        </section>
 
-        <section>
-          <h2>Contatos</h2>
-          <ul>
-            <li>Email: antoniociceropsr@gmail.com</li>
-            <li>GitHub: github.com/AntCicero</li>
-          </ul>
-        </section>
+        <div class="title-bar">
+          <span class="title"></span>
+          <div class="window-buttons">
+            <button>-</button>
+            <button>□</button>
+            <button>x</button>
+          </div>
+        </div>
+
+        <div class="window-header">
+          <button class="tab" onclick="switchTab('sobre')">Sobre</button>
+          <button class="tab" onclick="switchTab('projetos')">Projetos</button>
+          <button class="tab" onclick="switchTab('contatos')">Contatos</button>
+        </div>
+
+
+        <div class="window-content">
+          <div class="tab-content" id="sobre">
+            <h2>Sobre mim</h2>
+            <p>Faço ciência da computação na UFMG</p>
+          </div>
+          <div class="tab-content" id="projetos" style="display: none;">
+            <h2>Projetos</h2>
+            <p>Alguns projetos legais aqui</p>
+          </div>
+          <div class="tab-content" id="contatos" style="display: none;">
+            <h2>Contatos</h2>
+            <ul>
+              <li>Email: antoniocicerosantos@gmail.com</li>
+              <li>GitHub: https://github.com/ACiceroSantos</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </main>
 
-    <div class="window">
-      <footer>
-        <p>Feito em 2025</p>
-      </footer>
-    </div>
+    <script>
+      function switchTab(tabId) {
+        // Esconde todo o conteúdo
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => content.style.display = 'none');
+
+        // Mostra apenas o conteúdo da aba clicada
+        const selectedTab = document.getElementById(tabId);
+        if (selectedTab) {
+          selectedTab.style.display = 'block';
+        }
+      }
+    </script>
+
+  <script>
+    const windowElement = document.querySelector(".window");
+    let isDragging = false, offsetX, offsetY;
+
+    windowElement.addEventListener("mousedown", (e) => {
+      if (!e.target.closest(".title-bar")) return;
+      isDragging = true;
+      offsetX = e.clientX - windowElement.offsetLeft;
+      offsetY = e.clientY - windowElement.offsetTop;
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (isDragging) {
+        windowElement.style.left = `${e.clientX - offsetX}px`;
+        windowElement.style.top = `${e.clientY - offsetY}px`;
+      }
+    });
+
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+    });
+  </script>
+
+    <footer>
+      <p>Feito em 2025</p>
+    </footer>
   </body>
 </html>
