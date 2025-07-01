@@ -6,11 +6,21 @@
 
 /* Estilo geral */
 body {
-  background-color: #c3d6f0; /* azul clarinho típico do Mac OS */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-size:contain;
+  background: linear-gradient(to bottom right, #c3f0e7, #c3d6f0, #d7c2f0);
+  /*background-image:
+    linear-gradient(to right, grey 1px, transparent 1px),
+    linear-gradient(to bottom, grey 1px, transparent 1px);
+  background-color: #d7c2f0;  azul clarinho típico do Mac OS */
   font-family: 'Chicago', sans-serif; /* fonte clássica do Mac */
   color: #000;
-  margin: 0;
-  padding: 20px;
+  /* margin: 0; */
+  /* padding: 20px; */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Janela central estilo Mac */
@@ -47,7 +57,7 @@ h1{
    hsl(0, 0%, 20%) 28% );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 4s infinite linear;
+  animation: shine 3s infinite linear;
   padding: 60px;
 }
 
@@ -56,10 +66,10 @@ h1{
     background-position: 0;
   }
   60%{
-    background-position: 1300px;
+    background-position: 28em;
   }
   100%{
-    background-position: 1300px;
+    background-position: 28em;
   }
 }
   
@@ -75,11 +85,12 @@ h1{
     padding: 20px;
   }
   
-  /* Seções */
+  /* Seções 
   section {
     margin-bottom: 30px;
   }
-  
+  */
+
   /* Rodapé */
   footer {
     text-align: center;
