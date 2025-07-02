@@ -17,9 +17,9 @@
         <div class="title-bar">
           <span class="title"></span>
           <div class="window-buttons">
-            <button>-</button>
-            <button>□</button>
-            <button>x</button>
+            <button class="tab" onclick="switchTab('-')">-</button>
+            <button class="tab">□</button>
+            <button class="tab" onclick="switchTab('x')">x</button>
           </div>
         </div>
 
@@ -48,7 +48,25 @@
           </div>
         </div>
       </div>
+
     </main>
+
+    <div class="window" id="musicWindow">
+      <div class="title-bar" id="titleBarMusic">
+        <span>music</span>
+        <div class="window-buttons">
+          <button onclick="minimizeWindowMusic()">-</button>
+          <button onclick="maximizeWindowMusic()">□</button>
+          <button onclick="closeWindowMusic()">x</button>
+        </div>
+      </div>
+      <div class="window-content" id="windowContentMusic">
+        <audio id="player" controls>
+          <source src="tracklist/Macintosh Plus.mp3" type="audio/mpeg">
+          Seu navegador não suporta o elemento de áudio.
+        </audio>
+      </div>
+    </div>
 
     <script>
       function switchTab(tabId) {
@@ -86,6 +104,60 @@
       isDragging = false;
     });
   </script>
+
+  <script>
+    const winMusic = document.getElementById("musicWindow");
+    const barMusic = document.getElementById("titleBarMusic");
+    const contentMusic = document.getElementById("windowContentMusic");
+  
+    let isDraggingMusic = false, offsetXMusic, offsetYMusic;
+  
+    barMusic.addEventListener("mousedown", (e) => {
+      isDraggingMusic = true;
+      offsetXMusic = e.clientX - winMusic.offsetLeft;
+      offsetYMusic = e.clientY - winMusic.offsetTop;
+    });
+  
+    document.addEventListener("mousemove", (e) => {
+      if (isDraggingMusic) {
+        winMusic.style.left = `${e.clientX - offsetXMusic}px`;
+        winMusic.style.top = `${e.clientY - offsetYMusic}px`;
+      }
+    });
+  
+    document.addEventListener("mouseup", () => {
+      isDraggingMusic = false;
+    });
+  
+    let isMaximizedMusic = false;
+    const originalSizeMusic = {
+      width: "400px",
+      left: "100px",
+      top: "100px"
+    };
+  
+    function maximizeWindowMusic() {
+      if (!isMaximizedMusic) {
+        winMusic.style.width = "600px";
+        winMusic.style.left = `${(window.innerWidth - 600) / 2}px`;
+        winMusic.style.top = "60px";
+        isMaximizedMusic = true;
+      } else {
+        winMusic.style.width = originalSizeMusic.width;
+        winMusic.style.left = originalSizeMusic.left;
+        winMusic.style.top = originalSizeMusic.top;
+        isMaximizedMusic = false;
+      }
+    }
+  
+    function minimizeWindowMusic() {
+      contentMusic.style.display = "none";
+    }
+  
+    function closeWindowMusic() {
+      winMusic.style.display = "none";
+    }
+    </script>
 
     <footer>
       <p>Feito em 2025</p>
