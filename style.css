@@ -86,7 +86,12 @@ body {
 }
 
 .window-content {
+  font-weight:lighter;
   padding: 10px;
+}
+
+audio {
+  width: 100%;
 }
 
 .tab-content {
@@ -153,6 +158,6 @@ h1{
   footer {
     text-align: center;
     padding: 30px;
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
   

@@ -18,7 +18,7 @@
           <span class="title"></span>
           <div class="window-buttons">
             <button class="tab" onclick="switchTab('-')">-</button>
-            <button class="tab">□</button>
+            <button class="tab" onclick="maximizeWindowMusic()">□</button>
             <button class="tab" onclick="switchTab('x')">x</button>
           </div>
         </div>
@@ -55,9 +55,9 @@
       <div class="title-bar" id="titleBarMusic">
         <span>music</span>
         <div class="window-buttons">
-          <button onclick="minimizeWindowMusic()">-</button>
-          <button onclick="maximizeWindowMusic()">□</button>
-          <button onclick="closeWindowMusic()">x</button>
+          <button class="tab" onclick="switchTab('-')">-</button>
+          <button class="tab" onclick="maximizeWindowMusic()">□</button>
+          <button class="tab" onclick="switchTab('x')">x</button>
         </div>
       </div>
       <div class="window-content" id="windowContentMusic">
@@ -67,6 +67,98 @@
         </audio>
       </div>
     </div>
+
+    <div class="window" id="chatWindow">
+      <div class="title-bar" id="chatTitleBar">
+        <span>chat</span>
+        <div class="window-buttons">
+          <button onclick="minimizeChat()">-</button>
+          <button onclick="maximizeChat()">□</button>
+          <button onclick="closeChat()">x</button>
+        </div>
+      </div>
+      <div class="window-content" id="chatContent">
+        <form id="chatForm">
+          <input type="text" id="chatName" placeholder="Seu nome" required><br>
+          <div contenteditable="true" id="chatMessage" style="width: 70%; height: 60px; border: 1px solid #ccc; padding: 5px; margin: 5px 0; overflow-y: auto; background: white;"></div>
+          <button type="submit">Enviar</button>
+        </form>
+        <div id="chatMessages"></div>
+      </div>
+    </div>
+
+    <script>
+      const chatWindow = document.getElementById("chatWindow");
+      const chatTitleBar = document.getElementById("chatTitleBar");
+      let isChatDragging = false, chatOffsetX, chatOffsetY;
+    
+      chatTitleBar.addEventListener("mousedown", (e) => {
+        isChatDragging = true;
+        chatOffsetX = e.clientX - chatWindow.offsetLeft;
+        chatOffsetY = e.clientY - chatWindow.offsetTop;
+      });
+      document.addEventListener("mousemove", (e) => {
+        if (isChatDragging) {
+          chatWindow.style.left = `${e.clientX - chatOffsetX}px`;
+          chatWindow.style.top = `${e.clientY - chatOffsetY}px`;
+        }
+      });
+      document.addEventListener("mouseup", () => {
+        isChatDragging = false;
+      });
+    
+      function minimizeChat() {
+        document.getElementById("chatContent").style.display = "none";
+      }
+      function maximizeChat() {
+        chatWindow.style.width = "600px";
+        chatWindow.style.left = `${(window.innerWidth - 600) / 2}px`;
+        chatWindow.style.top = "80px";
+      }
+      function closeChat() {
+        chatWindow.style.display = "none";
+      }
+    
+      const chatForm = document.getElementById("chatForm");
+      const chatMessages = document.getElementById("chatMessages");
+    
+      const messages = JSON.parse(localStorage.getItem("chatMessages")) || [];
+      renderMessages();
+    
+      chatForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("chatName").value.trim();
+        const chatBox = document.getElementById("chatMessage");
+        const message = chatBox.innerHTML.trim().replace(/<br>/g, '').replace(/&nbsp;/g, '').trim();
+        if (!name || !message) return;
+
+    
+        if (!name || !message) return;
+    
+        messages.push({ name, message });
+        localStorage.setItem("chatMessages", JSON.stringify(messages));
+        renderMessages();
+    
+        chatBox.innerHTML = "";
+        chatBox.focus();
+      });
+    
+      function renderMessages() {
+        chatMessages.innerHTML = "";
+        const colorMap = {};
+        const colorPool = ["#e6194b", "#3cb44b", "#ffe119", "#4363d8", "#f58231", "#911eb4", "#46f0f0", "#f032e6"];
+    
+        messages.forEach(({ name, message }) => {
+          if (!colorMap[name]) {
+            colorMap[name] = colorPool[Object.keys(colorMap).length % colorPool.length];
+          }
+          const div = document.createElement("div");
+          div.innerHTML = `<span style='font-weight: normal'><span style='color: ${colorMap[name]}'>${name}</span>: ${message}</span>`;
+          chatMessages.appendChild(div);
+        });
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    </script>
 
     <script>
       function switchTab(tabId) {
@@ -160,7 +252,7 @@
     </script>
 
     <footer>
-      <p>Feito em 2025</p>
+      <p>Abra no computador</p>
     </footer>
   </body>
 </html>
